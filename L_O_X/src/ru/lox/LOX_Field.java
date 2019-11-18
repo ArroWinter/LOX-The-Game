@@ -51,10 +51,10 @@ public class LOX_Field {
     }
 
     void DrawField() {
-        String[] xoxo = {"_", "_", "_", "_", "_", "_", "_", "_", "_"};
+        String[] xoxo = {"0", "1", "2", "3", "4", "5", "6", "7", "8"};
         for (int i = 0; i < 9; i++) {
-            if (this.field[i] == 1) xoxo[i] = "X";
-            if (this.field[i] == 2) xoxo[i] = "O";
+            if (this.field[i] == 11) xoxo[i] = "X";
+            if (this.field[i] == 22) xoxo[i] = "O";
         }
         System.out.println(xoxo[0] + "|" + xoxo[1] + "|" + xoxo[2]);
         System.out.println("=====");

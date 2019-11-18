@@ -9,7 +9,7 @@ public class Game {
             x_o = !x_o;
             lox.DrawField();
             System.out.println("mark " + (x_o ? "X" : "O"));
-            lox.setField(x_o ? 1 : 2, lox.getNumber());
+            lox.setField(x_o ? 11 : 22, lox.getNumber());
             end = lox.isGameOver();
             if (!end) {
                 lox.clearScreen();

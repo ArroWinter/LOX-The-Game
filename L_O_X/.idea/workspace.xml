@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2524b03a-bfaf-48d6-b3a7-1329e6e08a61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/L_O_X/META-INF/L_O_X.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/lox/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/lox/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/lox/LOX_Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/lox/LOX_Field.java" afterDir="false" />
     </list>
@@ -96,6 +93,7 @@
       <updated>1573478851952</updated>
       <workItem from="1573478855267" duration="9357000" />
       <workItem from="1574075835261" duration="3555000" />
+      <workItem from="1574080132595" duration="303000" />
     </task>
     <servers />
   </component>
@@ -107,7 +105,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
