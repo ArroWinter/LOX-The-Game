@@ -1,1 +1,1 @@
-# LOX-The-Game
+# Little-O-X-The-Game
