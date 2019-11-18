@@ -18,12 +18,12 @@ public class LOX_Field {
         return field;
     }
 
-    int getNumber(){
+    int getNumber() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        while (true){
+        while (true) {
             try {
                 int n = Integer.parseInt(reader.readLine());
-                if (n >= 0 && n < field.length && field[n]==0){
+                if (n >= 0 && n < field.length && field[n] == 0) {
                     return n;
                 }
                 System.out.println("Choose free cell and enter its number");
@@ -33,30 +33,21 @@ public class LOX_Field {
         }
     }
 
-    boolean isGameOver(int n){
-        // 0 1 2
-        // 3 4 5
-        // 6 7 8
-        //поиск совпадений по горизонтали
-        int row = n-n%3; //номер строки - проверяем только её
-        if (field[row]==field[row+1] &&
-                field[row]==field[row+2]) return true;
-        //поиск совпадений по вертикали
-        int column = n%3; //номер столбца - проверяем только его
-        if (field[column]==field[column+3])
-            if (field[column]==field[column+6]) return true;
-        //мы здесь, значит, первый поиск не положительного результата
-        //если значение n находится на одной из граней - возвращаем false
-        if (n%2!=0) return false;
-        //проверяем принадлежит ли к левой диагонали значение
-        if (n%4==0){
-            //проверяем есть ли совпадения на левой диагонали
-            if (field[0] == field[4] &&
-                    field[0] == field[8]) return true;
-            if (n!=4) return false;
-        }
-        return field[2] == field[4] &&
-                field[2] == field[6];
+    boolean isGameOver() {
+        /*
+        0 1 2
+        3 4 5
+        6 7 8
+        */
+        if (field[1] == field[4] && field[7] == field[4] && field[1] != 0) return false;
+        if (field[8] == field[4] && field[0] == field[4] && field[8] != 0) return false;
+        if (field[3] == field[4] && field[5] == field[4] && field[3] != 0) return false;
+        if (field[2] == field[4] && field[6] == field[4] && field[2] != 0) return false;
+        if (field[0] == field[1] && field[2] == field[1] && field[0] != 0) return false;
+        if (field[6] == field[7] && field[7] == field[8] && field[6] != 0) return false;
+        if (field[3] == field[6] && field[3] == field[0] && field[3] != 0) return false;
+        if (field[2] == field[5] && field[2] == field[8] && field[2] != 0) return false;
+        return true;
     }
 
     void DrawField() {
@@ -73,7 +64,17 @@ public class LOX_Field {
     }
 
     public boolean isDraw() {
-        for (int n : field) if (n==0) return false;
+        for (int n : field) if (n == 0) return false;
         return true;
+    }
+
+    public void whoWin(boolean win) {
+        if (win) System.out.println("X Player win this game");
+        else System.out.println("O Player win this game");
+    }
+
+    public void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 }

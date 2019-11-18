@@ -5,14 +5,17 @@ public class Game {
         boolean end, x_o = false;
         LOX_Field lox = new LOX_Field();
         do {
+            lox.clearScreen();
             x_o = !x_o;
             lox.DrawField();
             System.out.println("mark " + (x_o ? "X" : "O"));
-            int n = lox.getNumber();
-            lox.setField(x_o ? 1 : 2, n);
-            //System.out.println(n);
-            //lox.DrawField();
-            end = lox.isGameOver(n);
+            lox.setField(x_o ? 1 : 2, lox.getNumber());
+            end = lox.isGameOver();
+            if (!end) {
+                lox.clearScreen();
+                lox.DrawField();
+                lox.whoWin(x_o);
+            }
         } while (end);
     }
 }
